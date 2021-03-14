@@ -18,20 +18,10 @@ class Item(BaseModel):
 
 app = FastAPI()
 
-origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
-    "http://localhost",
-    "http://localhost:8080",
-    "http://185.85.241.50:5500",
-    "http://185.85.241.50:8080",
-    "https://api.parsinga.com",
-    "http://185.85.241.50"
-]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

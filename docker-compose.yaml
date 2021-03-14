@@ -5,6 +5,6 @@ services:
   api:
           build: file-converter
           environment:
-            - PORT=5500
+            - PORT=8080
           ports:
-            - 5500:5500
+            - 8080:8080
