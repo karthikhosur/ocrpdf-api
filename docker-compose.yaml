@@ -1,0 +1,10 @@
+version: "3.7"
+
+
+services:
+  api:
+          build: file-converter
+          environment:
+            - PORT=5500
+          ports:
+            - 5500:5500
