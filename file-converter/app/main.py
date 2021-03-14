@@ -3,6 +3,7 @@ from fastapi.param_functions import Path
 from fastapi import Depends, FastAPI, HTTPException, File, UploadFile
 from pydantic import BaseModel
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
 from subprocess import  Popen
 from base64 import b64decode,b64encode
 
@@ -17,6 +18,22 @@ class Item(BaseModel):
 
 app = FastAPI()
 
+origins = [
+    "http://localhost.tiangolo.com",
+    "https://localhost.tiangolo.com",
+    "http://localhost",
+    "http://localhost:8080",
+    "http://185.85.241.50:5500/parsinga_ocr",
+    "http://185.85.241.50:5500"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
