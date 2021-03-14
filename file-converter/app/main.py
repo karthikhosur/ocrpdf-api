@@ -8,7 +8,7 @@ from subprocess import  Popen
 from base64 import b64decode,b64encode
 
 def pdf_ocr(input_pdf, output_pdf):
-    p = Popen(["ocrmypdf --output-type pdf",input_pdf,output_pdf])
+    p = Popen(["ocrmypdf",input_pdf,output_pdf,"--output-type pdf"])
     p.communicate()
 
 
