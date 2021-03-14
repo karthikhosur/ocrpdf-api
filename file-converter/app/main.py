@@ -23,8 +23,10 @@ origins = [
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:8080",
-    "http://185.85.241.50:5500/parsinga_ocr",
-    "http://185.85.241.50:5500"
+    "http://185.85.241.50:5500",
+    "http://185.85.241.50:8080",
+    "https://api.parsinga.com",
+    "http://185.85.241.50"
 ]
 
 app.add_middleware(
